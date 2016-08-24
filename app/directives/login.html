@@ -1,0 +1,38 @@
+<div class="container" ng-submit="subLogin()" ng-controller="loginCtrl">
+    <header>
+        <h3><span class="glyphicon glyphicon-lock"></span> Login</h3>
+    </header>
+    <form name="loginForm">
+        <div class="login">
+            <div class="row">
+                <div class="col-md-1">
+                    Email:
+                </div>
+                <div class="col-md-11">
+                    <input type="email" required name="myEmail" class="form-control" ng-model="email" />
+                    <span class="error" ng-show="loginForm.myEmail.$error.email">Not a valid e-mail address</span>
+                    <!--div class="error" ng-show="loginForm.myEmail.$error.required">
+        Field required</div-->
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-1">
+                    Password:
+                </div>
+                <div class="col-md-11">
+                    <input type="password" required name="myPassword" class="form-control" ng-model="password" />                   
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">
+                        Login
+                    </button>
+                </div>
+            </div>
+            <br />
+        </div>
+    </form>
+</div>
