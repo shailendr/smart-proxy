@@ -10,6 +10,9 @@
                         <tr>
                             <th>Id</th>
                             <th>Status</th>
+                            <th>Opened On</th>
+                            <th>Last Modified</th>
+                            <th>Assign to</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -17,7 +20,10 @@
                         <tr ng-repeat="user in members">
                             <td>{{user.id}}</td>
                             <td><a href="#">{{user.status}} </a></td>
-                            <td><button class="btn btn-default" >View</button></td>
+                            <td><a href="#">{{user.openedOn}} </a></td>
+                            <td><a href="#">{{user.modifieddOn}} </a></td>
+                            <td><a href="#">{{user.firstName}} {{user.lastName}}</a></td>
+                            <td><button class="btn btn-default" ng-click="viewTicket(user.id)">View</button></td>
                         </tr>                               
                     </tbody>
                 </table>

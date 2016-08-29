@@ -10,7 +10,37 @@ var members = [
 				 "avatar"	 : "../../assets/images/male.png",
 				 "task"		 : "2",
 				 "id"		 : "1000124",
-				 "status"	 : "Open"	
+				 "status"	 : "Open",
+				 "openedOn"  : "23/Aug/2013",
+				 "modifieddOn"  : "24/Aug/2013"
+				},
+				{
+				 "firstName" : "Dev",
+				 "lastName"  : "Singh",
+				 "email"     : "Dev.singh@email.com",
+				 "address"   : "Hinjewadi",
+				 "city"		 : "Pune",
+				 "state"     : "Maharastra",
+				 "avatar"	 : "../../assets/images/male.png",
+				 "task"		 : "2",
+				 "id"		 : "1000125",
+				 "status"	 : "Open",
+				 "openedOn"  : "2/Nov/2015",
+				 "modifieddOn"  : "21/Nov/2015"
+				},
+				{
+				 "firstName" : "Pooja",
+				 "lastName"  : "Singh",
+				 "email"     : "Pooja.singh@email.com",
+				 "address"   : "Hinjewadi",
+				 "city"		 : "Pune",
+				 "state"     : "Maharastra",
+				 "avatar"	 : "../../assets/images/male.png",
+				 "task"		 : "2",
+				 "id"		 : "1000126",
+				 "status"	 : "Open",
+				 "openedOn"  : "1/Jan/2016",
+				 "modifieddOn"  : "2/Jan/2016"
 				}
 			];
 
@@ -96,7 +126,14 @@ app.controller('memberCtrl',function($scope, $rootScope, $location){
 		members.push($scope.newUser);
 		$rootScope.isLogin = true;
     	$rootScope.activeTeam = "";
-		$location.path('/team');
+		$location.path('/issue');
+    };
+    $scope.viewTicket = function(id){
+    	alert(id);
+/*		members.push($scope.newUser);
+		$rootScope.isLogin = true;
+    	$rootScope.activeTeam = "";
+		$location.path('/team');*/
     };
     $rootScope.activeTeam = "";
  	$scope.members = members;

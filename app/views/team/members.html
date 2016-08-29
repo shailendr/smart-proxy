@@ -8,16 +8,30 @@
             <div class="col-md-10">
                 <div class="navbar">
                     <form class="navbar-form">
-                        <div class="form-group col-md-8">
+                        <div class="form-group col-md-12">
                             <div class="row">
                                 <label class="navbarText col-md-2">Issue #</label>
-                                <div class="col-md-8">
+                                <div class="col-md-9">
                                     <input type="text" class="novalidate form-control" />
+
+                                    <label class="radio-inline">
+                                      <input type="radio" name="optradio">Not yet started
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="optradio">In progress
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="optradio">Resolved
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="optradio">Closed
+                                    </label>
+
                                 </div>
 
-                                    <button type="submit" class="col-md-2 btn btn-primary">
-                                        Search
-                                    </button>
+                                <button type="submit" class="col-md-1 btn btn-primary">
+                                    Search
+                                </button>
                             </div>    
                         </div>
                     </form>
