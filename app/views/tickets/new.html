@@ -1,7 +1,7 @@
 <div ng-show="!isLogin">
     Please log in to full view of portal.
 </div>
-<div ng-show="isLogin" class="container" ng-controller="memberCtrl">
+<div ng-show="isLogin" class="container" ng-controller="assignCtrl">
     <div class="row gridContainer membersTable show-hide-animation">
         <div class="col-md-10">
             <div>
@@ -23,7 +23,7 @@
                             <td><a href="#">{{user.openedOn}} </a></td>
                             <td><a href="#">{{user.modifieddOn}} </a></td>
                             <td><a href="#">{{user.firstName}} {{user.lastName}}</a></td>
-                            <td><button class="btn btn-default" ng-click="viewTicket(user.id)">View</button></td>
+                            <td><a class="btn btn-default" href="#/assign/{{user.id}}/display">View</a></td>
                         </tr>                               
                     </tbody>
                 </table>

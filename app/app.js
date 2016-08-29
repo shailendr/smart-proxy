@@ -64,10 +64,14 @@ app.config(function($routeProvider){
 		controller : "teamCtrl"
 	})
 	.when("/assign",{
-		templateUrl : "views/member/new.html",
-		controller : "memberCtrl"
+		templateUrl : "views/tickets/new.html",
+		controller : "assignCtrl"
 	})
-	;
+	.when('/assign/:id/display', {
+        templateUrl: "views/tickets/display.html",
+        controller: "assignCtrl",
+        method: "display"
+    });
 });
 
 /*
@@ -110,7 +114,7 @@ app.controller('teamAppCtrl',function($scope, $rootScope){
     $rootScope.activeTeam = "";
 });
 
-app.controller('memberCtrl',function($scope, $rootScope, $location){
+app.controller('assignCtrl',function($scope, $route, $rootScope, $location,$routeParams){
     $scope.newUser = {
     	    "firstName" : "dev",
 		    "lastName" : "singh",
@@ -128,6 +132,9 @@ app.controller('memberCtrl',function($scope, $rootScope, $location){
     	$rootScope.activeTeam = "";
 		$location.path('/issue');
     };
+    $scope.display = function(){
+		$scope.ticketId = $routeParams.id;
+    };
     $scope.viewTicket = function(id){
     	alert(id);
 /*		members.push($scope.newUser);
@@ -135,8 +142,20 @@ app.controller('memberCtrl',function($scope, $rootScope, $location){
     	$rootScope.activeTeam = "";
 		$location.path('/team');*/
     };
+    
     $rootScope.activeTeam = "";
- 	$scope.members = members;
+	$scope.members = members;
+
+ 	$scope.init = function(){
+
+	 	//$scope.reset();
+      //  Calling routeParam method
+      if ($route.current.method !== undefined) {
+        $scope[$route.current.method]();
+      }
+    };
+
+    $scope.init();
 });
 
 app.controller('teamCtrl',function($scope, $rootScope, $location){
@@ -147,6 +166,8 @@ app.controller('teamCtrl',function($scope, $rootScope, $location){
     };
     $rootScope.activeTeam = "active";
     $scope.members = members; 
+
+
 });
 
 app.controller('loginCtrl',function($scope, $rootScope, $location){
@@ -160,6 +181,5 @@ app.controller('loginCtrl',function($scope, $rootScope, $location){
 			$location.path('/search');
 		  }
 		});
-    };
-    
+    };    
 });
