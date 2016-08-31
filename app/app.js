@@ -12,7 +12,8 @@ var members = [
 				 "id"		 : "1000124",
 				 "status"	 : "Open",
 				 "openedOn"  : "23/Aug/2013",
-				 "modifieddOn"  : "24/Aug/2013"
+				 "modifieddOn"  : "24/Aug/2013",
+				 "discription" : "Backup issue observed using the new app version"
 				},
 				{
 				 "firstName" : "Dev",
@@ -26,7 +27,8 @@ var members = [
 				 "id"		 : "1000125",
 				 "status"	 : "Open",
 				 "openedOn"  : "2/Nov/2015",
-				 "modifieddOn"  : "21/Nov/2015"
+				 "modifieddOn"  : "21/Nov/2015",
+				 "discription" : "Samsung TV is not connected to JBL bluetooth speakers."
 				},
 				{
 				 "firstName" : "Pooja",
@@ -40,11 +42,12 @@ var members = [
 				 "id"		 : "1000126",
 				 "status"	 : "Open",
 				 "openedOn"  : "1/Jan/2016",
-				 "modifieddOn"  : "2/Jan/2016"
+				 "modifieddOn"  : "2/Jan/2016",
+				 "discription" : "Samsung NOTE 3 Gallary is not sync up to Dropbox."
 				}
 			];
 
-var users = [{email:'admin@admin.com', password:'admin123' }];
+var users = [{email:'admin@asurion.com', password:'asurion123' }];
 
 /*
 	routes
@@ -136,20 +139,30 @@ app.controller('assignCtrl',function($scope, $route, $rootScope, $location,$rout
 		$scope.ticketId = $routeParams.id;
     };
     $scope.viewTicket = function(id){
-    	alert(id);
-/*		members.push($scope.newUser);
-		$rootScope.isLogin = true;
-    	$rootScope.activeTeam = "";
-		$location.path('/team');*/
+    };
+
+    $scope.tab = 1;
+    $scope.setTab = function(newTab){
+      $scope.tab = newTab;
+    };
+
+    $scope.isSet = function(tabNum){
+      return $scope.tab === tabNum;
+    };
+
+    $scope.ticketDetails = function(ticketID){
+    	var data = $scope.members;
+        for(var i=0; i < data.length; i++){
+            if(data[i].id == ticketID){
+				return data[i]
+            }            
+        }	
     };
     
     $rootScope.activeTeam = "";
 	$scope.members = members;
 
  	$scope.init = function(){
-
-	 	//$scope.reset();
-      //  Calling routeParam method
       if ($route.current.method !== undefined) {
         $scope[$route.current.method]();
       }

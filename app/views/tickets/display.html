@@ -4,30 +4,82 @@
 <div ng-show="isLogin" class="container" ng-controller="assignCtrl">
 	
 <div class="container">
-  <h2>{{ticketId}}</h2>
+  <!--h2>{{ticketId}}</h2-->
   <ul class="nav nav-pills">
-    <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
-    <li><a data-toggle="pill" href="#menu1">Menu 1</a></li>
-    <li><a data-toggle="pill" href="#menu2">Menu 2</a></li>
-    <li><a data-toggle="pill" href="#menu3">Menu 3</a></li>
+    <li ng-class="{ active : isSet(1) }" ><a data-toggle="pill" href ng-click="setTab(1)">Issue Summary</a></li>
+    <li ng-class="{ active : isSet(2) }" ><a data-toggle="pill" href ng-click="setTab(2)">Video</a></li>
+    <li ng-class="{ active : isSet(3) }" ><a data-toggle="pill" href ng-click="setTab(3)">Proxy Logs/ Events</a></li>
   </ul>
   
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-      <h3>HOME</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <div class="col-md-12">
+    <div ng-show="isSet(1)" id="issue">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6"><h1>Issue #: {{ticketId}}</h1></div>
+          <div class="col-md-6"><h1>Opened on : {{ticketDetails(ticketId).openedOn}}</h1></div>
+        </div>  
+        <div class="row">
+          <div class="col-md-12">
+            <p>{{ticketDetails(ticketId).discription}}</p>
+          </div>
+        </div>  
+        <div class="row">
+          <div class="col-md-12">
+            <p>Comments:</p>
+
+              <div class="container">
+                <div class="panel-group" id="accordion">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Development Team</a>
+                      </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse in">
+                      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Engg support Team</a>
+                      </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Customer Care Agent</a>
+                      </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                 
+          </div>
+        </div>  
+      </div>
     </div>
-    <div id="menu1" class="tab-pane fade">
-      <h3>Menu 1</h3>
+    <div ng-show="isSet(2)" id="video">
+      <h3>Video</h3>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <iframe width="420" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k?autoplay=1"></iframe>
     </div>
-    <div id="menu2" class="tab-pane fade">
-      <h3>Menu 2</h3>
+    <div ng-show="isSet(3)" id="log">
+      <h3>Proxy Logs/ Events</h3>
       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-    </div>
-    <div id="menu3" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
     </div>
   </div>
 </div>
