@@ -1,0 +1,111 @@
+/* Card Layout css*/
+
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+.error{
+    color: #DC136C;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #2DB0F8;
+  margin-top: 15px;
+}
+.white{
+   color: #F2F2F2;
+}
+.card {
+    background-color:#fff;
+    border: 1px solid #d4d4d4;
+    height:100px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.cardHeader {
+    background-color:#027FF4;
+    font-size:14pt;
+    color:white;
+    padding:5px;
+    width:100%;
+}
+.cardClose {
+    color: white;
+    font-weight:bold;
+    margin-right:5px;
+}
+.cardContainer {
+    width:85%;
+}
+
+.cardBody {
+    padding-left: 5px;
+}
+
+.cardBodyLeft {
+    margin-top: -5px;
+}
+
+.cardBodyRight {
+    margin-left: 20px;
+    margin-top: 2px;
+}
+
+.cardBodyContent {
+    width: 100px;
+}
+
+.cardImage {
+    height:50px;
+    width:50px;
+    margin-top:10px;
+    border-radius: 25px;
+}
+
+
+.lastRow {
+    background-color: #ccc;
+}
+
+.indent {
+    margin-left:5px;
+}
+
+.tasksTable {
+    width:85%;
+}
+
+.tasks th, .members th {
+    width:20%;
+    cursor: pointer;
+}
+
+.tasksTable tr:first-child th, .membersTable tr:first-child th {
+    background-color: #027FF4;
+    color: #fff;
+    font-weight: bold;
+}
+
+.gridContainer td {
+    vertical-align: middle;
+}
+
+.close {
+    font-size:15pt;
+    opacity: 1.0;
+}
+
+.login input[type='email'],
+.member input[type='text'],
+.login input[type='password'] ,
+select.form-control{
+    width:300px;
+}
+
+.navbar-form{
+    margin-top: 0;
+}
