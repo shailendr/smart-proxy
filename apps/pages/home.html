@@ -30,12 +30,13 @@
       <ul class="nav navbar-nav navbar-right" >
         <li><img src="../css/profile.png" style="width:50px;height:50px; border-radius:50px;"></li>
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-        <li><a href="#login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </ul>
     </div>
   </div>
 </nav>
 <!-- Header END-->
+
 <!-- Body start -->
     <div class="container" style="margin:75px;"> 
         <!--h3><span class="glyphicon glyphicon-user"></span> Team members</h3-->
@@ -45,9 +46,19 @@
                     <form class="navbar-form">
                         <div class="form-group col-md-12">
                             <div class="row">
-                                <label class="navbarText col-md-2">Issue #</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="novalidate form-control" />
+                                <div class="col-md-5">
+                                    <label class="navbarText">Issue #</label>
+                                    <input type="text" />
+                                </div>
+                                <div class="col-md-5">                               
+                                    <label>Status</label>
+                                    <select class="input-large form-control">
+                                        <option value="Not_yet_started">Not yet started</option>
+                                        <option value="In_progress">In progress</option>
+                                        <option value="Resolved">Resolved</option>
+                                        <option value="Closed">Closed</option>
+                                    </select>    
+                                    <!--input type="text" class="novalidate form-control" />
 
                                     <label class="radio-inline">
                                       <input type="radio" name="optradio">Not yet started
@@ -60,11 +71,11 @@
                                     </label>
                                     <label class="radio-inline">
                                       <input type="radio" name="optradio">Closed
-                                    </label>
+                                    </label-->
 
                                 </div>
 
-                                <button type="submit" class="col-md-1 btn btn-primary">
+                                <button type="submit" class="col-md-2 btn btn-primary">
                                     Search
                                 </button>
                             </div>    
@@ -82,6 +93,8 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Status</th>
+                                    <th>Opened On</th>
+                                    <th>Last Modified</th>
                                     <th>Assign to</th>
                                     <th>Actions</th>
                                 </tr>
@@ -90,20 +103,26 @@
                                 <tr>
                                     <td>100</td>
                                     <td>Open</td>
+                                    <td>23/08/2016</td>
+                                    <td>26/08/2016</td>
                                     <td>Ivyansh</td>
-                                    <td><a class="btn btn-default" href="assign.html" >View</a></td>
+                                    <td><a class="btn btn-default" href="ivyansh.html" >View</a></td>
                                 </tr>
                                 <tr>
                                     <td>101</td>
                                     <td>Open</td>
+                                    <td>2/09/2016</td>
+                                    <td>2/09/2016</td>
                                     <td>Pooja</td>
-                                    <td><a class="btn btn-default" href="assign.html">View</a></td>
+                                    <td><a class="btn btn-default" href="pooja.html">View</a></td>
                                 </tr>
                                 <tr>
                                     <td>102</td>
                                     <td>Open</td>
+                                    <td>12/09/2016</td>
+                                    <td>13/09/2016</td>
                                     <td>Dev</td>
-                                    <td><a class="btn btn-default" href="assign.html">View</a></td>
+                                    <td><a class="btn btn-default" href="dev.html">View</a></td>
                                 </tr>                               
                             </tbody>
                         </table>
