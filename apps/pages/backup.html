@@ -53,6 +53,7 @@
     <li class="active"><a data-toggle="pill" href="#summary">Comments</a></li>
     <li><a data-toggle="pill" href="#video">Photos/ Videos</a></li>
     <li><a data-toggle="pill" href="#log">Proxy Logs/ Events</a></li>
+    <li><a data-toggle="pill" href="#deviceLog">Device Logs</a></li>
   </ul>
   
   <div class="tab-content">
@@ -110,8 +111,6 @@
       </video>
     </div>
     <div id="log" class="tab-pane fade">
-      <!-- <h3>Provision</h3> -->
-<!-- Inner TAB START-->
       <div class="panel panel-default">
         <div class="panel-heading"></div>
         <div class="panel-body">
@@ -126,16 +125,6 @@
                                 <ul class="nav nav-list tree">
                                     <li style="margin-left: 5%;">
                                       <label class="tree-toggle nav-header">/v1/files</label> 
-<!--                                       <ul class="nav nav-list tree">
-                                        <li style="margin-left: 5%;">
-                                          <i class="fa fa-folder-open"></i><label class="tree-toggle nav-header">vi</label>
-                                          <ul class="nav nav-list tree">
-                                            <li style="margin-left: 5%;">
-                                              <i class="fa fa-folder-open"></i><label class="tree-toggle nav-header">files</label>
-                                            </li>
-                                          </ul> 
-                                        </li>
-                                      </ul>   --> 
                                 </ul>
                             </li>
                             <li><label class="tree-toggle nav-header" style="color:#337ab7">Back up</label>
@@ -296,6 +285,34 @@
       </div>
 
       <!-- Inner TAB END-->  
+    </div>
+    <div id="deviceLog" class="tab-pane fade">
+      <textarea style="margin: 10px; width: 600px; height: 300px; border-color: #2DB0F8; font-size: 12px;" >
+        9/22/16 10:27 PM [com.hackathon.clicktorecord.ClickToRecordActivity]:permission granted by user
+        9/22/16 10:27 PM [com.hackathon.clicktorecord.ClickToRecordActivity]:buttonClicked:recordOutsideApp
+        9/22/16 10:27 PM [receiver]:Got message: video recording finished
+        9/22/16 10:27 PM [com.hackathon.clicktorecord.ClickToRecordActivity]:buttonClicked:uploadToS3 file to upload /storage/emulated/0/Android/data/com.hackathon.clicktorecord/files/5.mp4
+        9/22/16 10:27 PM [com.hackathon.clicktorecord.ClickToRecordActivity]:starting upload for file /storage/emulated/0/Android/data/com.hackathon.clicktorecord/files/5.mp4
+        9/22/16 10:27 PM [com.hackathon.clicktorecord.ClickToRecordActivity]:bucket to upload amps3qa01
+        9/22/16 10:27 PM [UploadListener]:onStateChanged: 1, IN_PROGRESS
+        9/22/16 10:27 PM [UploadListener]:onStateChanged: 1, COMPLETED
+        9/22/16 10:31 PM [com.hackathon.clicktorecord.ClickToRecordActivity]:permission granted by user
+        9/22/16 10:31 PM [com.hackathon.clicktorecord.ClickToRecordActivity]:buttonClicked:recordOutsideApp
+        9/22/16 10:31 PM [com.hackathon.clicktorecord.ClickToRecordActivity]:buttonClicked:recordOutsideApp
+        9/22/16 10:31 PM [receiver]:Got message: video recording finished
+        9/22/16 10:31 PM [com.hackathon.clicktorecord.ClickToRecordActivity]:buttonClicked:uploadToS3 file to upload /storage/emulated/0/Android/data/com.hackathon.clicktorecord/files/5.mp4
+        9/22/16 10:31 PM [com.hackathon.clicktorecord.ClickToRecordActivity]:starting upload for file /storage/emulated/0/Android/data/com.hackathon.clicktorecord/files/5.mp4
+        9/22/16 10:31 PM [com.hackathon.clicktorecord.ClickToRecordActivity]:bucket to upload amps3qa01
+        9/22/16 10:31 PM [UploadListener]:onStateChanged: 1, IN_PROGRESS
+        9/22/16 10:31 PM [UploadListener]:onStateChanged: 1, COMPLETED
+        9/22/16 10:33 PM [com.hackathon.clicktorecord.ClickToRecordActivity]:ClickToRecordActivity launched
+        9/22/16 10:33 PM [com.hackathon.clicktorecord.ClickToRecordActivity]:buttonClicked:recordInApp
+        9/22/16 10:33 PM [receiver]:Got message: video recording finished
+        9/22/16 10:33 PM [com.hackathon.clicktorecord.ClickToRecordActivity]:buttonClicked:uploadToS3 file to upload /storage/emulated/0/Android/data/com.hackathon.clicktorecord/files/5.mp4
+        9/22/16 10:33 PM [com.hackathon.clicktorecord.ClickToRecordActivity]:starting upload for file /storage/emulated/0/Android/data/com.hackathon.clicktorecord/files/5.mp4
+        9/22/16 10:33 PM [com.hackathon.clicktorecord.ClickToRecordActivity]:bucket to upload amps3qa01
+        9/22/16 10:33 PM [UploadListener]:onStateChanged: 2, IN_PROGRESS
+      </textarea>
     </div>
   </div>
 </div>
