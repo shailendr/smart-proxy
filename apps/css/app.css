@@ -156,3 +156,9 @@ select.form-control{
     height: 40px;
     font-size: 15px;
 }
+.navbar-brand {
+    padding: 0 0;
+}
+.navbar-default .navbar-brand:hover {
+    color: #f2780d;
+}
